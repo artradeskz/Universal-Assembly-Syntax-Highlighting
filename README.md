@@ -1,26 +1,37 @@
-## Overview 🛠️
+## Обзор 🛠️
 
-This Visual Studio Code extension provides comprehensive syntax highlighting for x86, x64 and ARM assembly language using Intel syntax. It's designed to improve readability and understanding of assembly code, including compiler-generated output.
+Это расширение для Visual Studio Code обеспечивает полноценную подсветку синтаксиса для ассемблера x86, x64 и ARM с использованием синтаксиса Intel. Оно создано для улучшения читаемости и понимания ассемблерного кода, включая вывод компиляторов.
 
-## Features ✨
+## Возможности ✨
 
-- Syntax highlighting for x86, x64 and ARM assembly instructions 💻
-- Support for Intel syntax 🧠
-- Highlighting of registers, memory operands, and numeric constants 🔍
-- Recognition of common assembler directives ⚙️
-- Proper highlighting of labels and function names 🏷️
-- Support for compiler-generated assembly features (e.g., CFI directives) 🛡️
+- Подсветка синтаксиса инструкций ассемблера x86, x64 и ARM 💻
+- Поддержка синтаксиса Intel 🧠
+- Подсветка регистров, операндов памяти и числовых констант 🔍
+- Распознавание стандартных директив ассемблера ⚙️
+- Правильная подсветка меток и имён функций 🏷️
+- Поддержка возможностей ассемблерного вывода компиляторов (например, CFI директивы) 🛡️
+- **Поддержка языка КВС** — ассемблера с русским синтаксисом для x86-64 🇷🇺
 
-## Installation 🚀
+## Установка 🚀
 
-1. Open Visual Studio Code
-2. Go to the Extensions view (Ctrl+Shift+X or Cmd+Shift+X on macOS)
-3. Search for "Universal Assembly Syntax Highlighting"
-4. Click Install
+### Способ 1: Установка из маркета расширений
 
-## Usage 💡
+1. Откройте Visual Studio Code
+2. Перейдите в раздел расширений (Ctrl+Shift+X или Cmd+Shift+X на macOS)
+3. Найдите "Universal Assembly Syntax Highlighting"
+4. Нажмите Установить
 
-Once installed, the extension will automatically provide syntax highlighting for files with the following extensions:
+### Способ 2: Ручная установка
+
+1. Склонируйте или скачайте репозиторий расширения
+2. Откройте командную палитру (Ctrl+Shift+P)
+3. Выполните команду `Developer: Open Extensions Folder`
+4. Скопируйте папку с расширением в открывшуюся директорию
+5. Перезапустите VS Code
+
+## Использование 💡
+
+После установки расширение будет автоматически подсвечивать синтаксис файлов со следующими расширениями:
 
 - `.asm`
 - `.s`
@@ -28,32 +39,37 @@ Once installed, the extension will automatically provide syntax highlighting for
 - `.nasm`
 - `.asmx`
 - `.inc`
+- `.квс` — файлы ассемблера КВС
 
-If you're working with a file that has a different extension but contains x86/x64 assembly code, you can manually set the language mode:
+Если вы работаете с файлом, имеющим другое расширение, но содержащим код ассемблера x86/x64, вы можете вручную установить режим языка:
 
-1. Click on the language indicator in the bottom-right corner of VS Code
-2. Select "x86/x64 Assembly" from the list of languages
+1. Нажмите на индикатор языка в правом нижнем углу VS Code
+2. Выберите "x86/x64 Assembly" из списка языков
 
-## Highlighted Elements 🎨
+## Подсвечиваемые элементы 🎨
 
-This extension provides syntax highlighting for:
+Это расширение обеспечивает подсветку синтаксиса для:
 
-- Instructions (e.g., `mov`, `push`, `call`) 📝
-- Registers (e.g., `eax`, `rbp`, `r15`) 📟
-- Memory operands (e.g., `DWORD PTR`, `QWORD PTR`) 📋
-- Numeric constants (decimal and hexadecimal) 🔢
-- Labels and function names 🏷️
-- Assembler directives (e.g., `.section`, `.globl`) 🧭
-- CFI directives (e.g., `.cfi_startproc`, `.cfi_endproc`) 🛡️
-- Comments (lines starting with `;`) 💬
+- Инструкций (например, `mov`, `push`, `call`) 📝
+- Регистров (например, `eax`, `rbp`, `r15`) 📟
+- Операндов памяти (например, `DWORD PTR`, `QWORD PTR`) 📋
+- Числовых констант (десятичных и шестнадцатеричных) 🔢
+- Меток и имён функций 🏷️
+- Директив ассемблера (например, `.section`, `.globl`) 🧭
+- CFI директив (например, `.cfi_startproc`, `.cfi_endproc`) 🛡️
+- Комментариев (строки, начинающиеся с `;`) 💬
+- **Русских инструкций КВС** (например, `переместить_имм`, `вызов_системы`) 🇷🇺
+- **Русских регистров КВС** (например, `раикс`, `рдиай`, `ал`) 🇷🇺
+- **Русских секций КВС** (`.текст`, `.данные`, `.бнд`) 🇷🇺
+- **Русских директив КВС** (`.глобал`, `.строка`, `.байт`) 🇷🇺
 
-## Customization 🎨
+## Настройка 🎨
 
-### Syntax Highlighting Colors
+### Цвета подсветки синтаксиса
 
-You can customize the colors used for syntax highlighting by modifying your VS Code color theme. Add or modify entries in your `settings.json` file under `"editor.tokenColorCustomizations"`.
+Вы можете настроить цвета подсветки синтаксиса, изменив цветовую тему VS Code. Добавьте или измените записи в вашем файле `settings.json` в разделе `"editor.tokenColorCustomizations"`.
 
-For example:
+Например:
 
 ```json
 "editor.tokenColorCustomizations": {
@@ -74,9 +90,9 @@ For example:
 }
 ```
 
-### Comment Characters
+### Символы комментариев
 
-You can configure which characters are used for comments to match your assembler. Add these settings to your VS Code `settings.json`:
+Вы можете настроить символы для комментариев в соответствии с вашим ассемблером. Добавьте эти настройки в ваш `settings.json`:
 
 ```json
 {
@@ -85,22 +101,22 @@ You can configure which characters are used for comments to match your assembler
 }
 ```
 
-**Common configurations:**
+**Распространённые конфигурации:**
 
-- **GNU Assembler (as)**: Use `#` for line comments
-- **NASM/MASM**: Use `;` for line comments (default)
-- **Custom assemblers**: Set to any character or string you prefer
+- **GNU Assembler (as)**: Используйте `#` для однострочных комментариев
+- **NASM/MASM**: Используйте `;` для однострочных комментариев (по умолчанию)
+- **Ассемблер КВС**: Используйте `;` для однострочных комментариев
 
-The extension will automatically update comment behavior when you change these settings.
+Расширение автоматически обновит поведение комментариев при изменении этих настроек.
 
-## Contributing 🤝
+## Вклад в проект 🤝
 
-If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
+Если вы нашли ошибки или у вас есть предложения по улучшению, пожалуйста, создайте обращение или отправьте запрос на включение изменений в GitHub репозитории.
 
-## License 📄
+## Лицензия 📄
 
-This extension is released under the MIT License. See the LICENSE file for details.
+Это расширение распространяется под лицензией MIT. Подробности см. в файле LICENSE.
 
-## Acknowledgements 🙌
+## Благодарности 🙌
 
-Thanks to all contributors and users who have provided feedback and suggestions to improve this extension.
+Спасибо всем участникам и пользователям, которые предоставили отзывы и предложения по улучшению этого расширения.
